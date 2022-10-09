@@ -6,6 +6,8 @@ import { Maps } from "../component/maps";
 import "../../styles/index.css";
 import Kodulogo from "../../img/Kodulogo.png";
 
+
+
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
@@ -22,7 +24,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div> */}
-
       <div className="row menu pt-2 pb-2">
         {!store.isAuthenticate ? (
           <div className="d-flex justify-content-evenly">
@@ -93,4 +94,6 @@ export const Navbar = () => {
       </div>
     </div>
   );
+
 };
+
