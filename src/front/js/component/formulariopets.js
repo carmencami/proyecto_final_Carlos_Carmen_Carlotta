@@ -9,7 +9,6 @@ export const FormularioPets = () => {
   const [pet, setPet] = useState("");
   const [login, setLogin] = useState("");
 
-
   useEffect(() => {}, []);
 
   const PetPhoto = (e) => {
@@ -22,11 +21,8 @@ export const FormularioPets = () => {
   
 
   return (
-    <form class="row g-3">
-    <div class="wrapper" className="form-group formregister">
-  
-     
-      <div className="container-fluid bodyregistro fluidbody">
+    <div className="wrapper">
+      <div className="container-fluid">
         <div className="tamañoformulario ">
           <div className="form-outline mb-4 text-center">
             <div className="myform">
@@ -34,9 +30,6 @@ export const FormularioPets = () => {
                 ¡Registra a la mascota que necesite ayuda!
               </h4>
               <div className="input-group mb-3 " />
-              <label className="input-group-text caracterlabel  casellalabel" for="inputGroupFile01">
-                Subir
-              </label>
               <input
                 type="file"
                 onChange={PetPhoto}
@@ -62,6 +55,15 @@ export const FormularioPets = () => {
                 onChange={(e) => setPet({ ...pet, years: e.target.value })}
                 className="form-control "
                 placeholder="Años"
+              />
+            </div>
+            <div className="form-group">
+              <label></label>{" "}
+              <input
+                type="text"
+                onChange={(e) => setPet({ ...pet, adress: e.target.value })}
+                className="form-control "
+                placeholder="Dirección"
               />
             </div>
             <div className="form-group ">
@@ -100,15 +102,11 @@ export const FormularioPets = () => {
                   setLogin("Imagen subida");
                 }}
                 type="submit"
-                className="registroboton btn  sub btn-secondary botonsubida"
-                
+                className="btn  sub btn-secondary botonsubida"
               >
                 Guardar
               </button>
-
               <p>{login}</p>{" "}
-
-
             </div>
           
           </div>

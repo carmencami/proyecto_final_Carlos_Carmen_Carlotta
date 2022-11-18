@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
-import { navigate, useNavigate } from "react-router-dom";
+import { navigate, useNavigate, Link } from "react-router-dom";
 import "../../styles/card_protectora.css";
 
 export function Card_protectora(props) {
@@ -12,41 +11,43 @@ export function Card_protectora(props) {
     actions.organizacion_list();
   }, []);
   return (
-    <div className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <a href="#"></a>
-      <div className="card cardsprotectora mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <div className="row">
+      <div className="card card-protectora">
         <div
-          className="card"
           style={{
-            width: "18rem",
+            width: "350px",
             backgroundColor: "transparent",
             border: "0px",
           }}
         />
-        <div className="card-body col-6 protectoracard">
-          <ul className="list-group list-group-flush">
-            <h5 className="list-group-item titulocard">
-              <b>Protectora:</b> {props.organizacion.name}
+        <div className="card-body col-6">
+          <div className="list-group list-group-flush">
+            <h5 className="titulocard mb-4">
+              <label>Protectora:</label> {props.organizacion.name}
             </h5>
-            <li className="list-group-item">
-              <b>Email:</b> {props.organizacion.email}
-            </li>
-            <li className="list-group-item">
-              <b> Ciudad:</b>
+            <div className="item-protectora">
+              <label>Email:</label> {props.organizacion.email}
+            </div>
+            <div className="item-protectora">
+              <label> Ciudad:</label>
               {props.organizacion.city}
-            </li>
-            <li className="list-group-item">
-              <b>Teléfono:</b>
+            </div>
+            <div className="item-protectora">
+              <label>Teléfono:</label>
               {props.organizacion.phone}
-            </li>
-            <li className="list-group-item">
-              {" "}
-              <b>Instagram:</b> {props.organizacion.instagram}
-            </li>
-          </ul>
-          {/* <button type="button" className="btn btn-warning botoncontacto">
-          <Link to={"/contacto"}>¡Contacta con la protectora!</Link>{" "}
-        </button> */}
+            </div>
+            <div className="item-protectora">
+              <label>Instagram:</label> {props.organizacion.instagram}
+            </div>
+            <div className="mx-auto">
+              <Link
+                className="btn btn-warning boton-protectora text-white mt-4"
+                to={"/contacto"}
+              >
+                ¡Contacta!
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

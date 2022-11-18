@@ -10,6 +10,7 @@ import cloudinary
 import cloudinary.uploader
 import random
 from flask_mail import Mail, Message
+from geopy.geocoders import Nominatim
 
 api = Blueprint('api', __name__)
 
@@ -71,10 +72,10 @@ def registro():
 @api.route('/roles', methods=['GET'])
 def rol():
     roles = Rol.query.all()
-    data = list(map(lambda rol: rol.serialize(), roles))
-    # data = [rol.serialize() for rol in roles]
+    # data = list(map(lambda rol: rol.serialize(), roles))
+    data = [rol.serialize() for rol in roles]
     print(data)
-    return jsonify(data)
+    return jsonify(data), 200
 
 
 @api.route('/pet', methods=['POST'])
@@ -84,18 +85,19 @@ def newpet():
     name = request.form.get("name")
     years = request.form.get("years")
     # //photo = request.form.get("photo")//
-    
+
     sexo = request.form.get("sexo")
     convivencia = request.form.get("convivencia")
     race = request.form.get("race")
+    adresses = request.form.get("adress")
     # upload file to uploadcare
+    cloudinary.config(cloud_name="dceot7tf0", api_key="583767443963337",
+                      api_secret="zt2Q5HVW63c9ZdC_K-QKDLwcrLI")
     result = cloudinary.uploader.upload(request.files['image'])
 
     photo_url = result['secure_url']
-    print("@@@@@@@@@@@")
-    print(photo_url)
     pets = Pets(organizacion_id=protectora_id, name=name, years=years,
-                race=race, photo=photo_url, sexo=sexo, convivencia=convivencia)
+                race=race, photo=photo_url, sexo=sexo,  convivencia=convivencia, adresses=adresses)
 
     db.session.add(pets)
     db.session.commit()
@@ -113,9 +115,9 @@ def pets():
 @api.route('/card_protectora', methods=['GET'])
 def card_protectora():
 
-    organizacion = Organizacion.query.all()
-    organizacion_list = list(
-        map(lambda organizacion: organizacion.serialize(), organizacion))
+    organizaciones = Organizacion.query.all()
+    organizacion_list = [organizacion.serialize()
+                         for organizacion in organizaciones]
     return jsonify(organizacion_list)
 
 
@@ -226,24 +228,29 @@ def organizacion():
 
 
 @api.route('/card_casaacogida', methods=['GET'])
-def listaCasaAcogida():
-    try:
-        organizacion = Organizacion.query.filter_by(rol_id=2)
-        casas_list = list(
-            map(lambda organizacion: organizacion.serialize(), organizacion))
-        response = {
-            "list": casas_list
-        }
-        return jsonify(response), 200
-
-    except Exception as error:
-
-        return jsonify(f"message error: {error}"), 401
+def cardCasaAcogida():
+    organizaciones = Organizacion.query.all()
+    casaacogida_list = [organizacion.serialize()
+                        for organizacion in organizaciones]
+    return jsonify(casaacogida_list)
 
 
 @api.route('/formulariopets', methods=['GET'])
 def formulariopets():
 
     pets = Pets.query.all()
-    pets_list = list(map(lambda pets: pets.serialize(), pets))
+    pets_list = [pet.serialize() for pet in pets]
     return jsonify(pets_list)
+
+
+@api.route('/map', methods=['GET'])
+def map():
+    locator = Nominatim(user_agent="myGeocoder")
+    pets = Pets.query.all()
+    response = []
+    for pet in pets:
+        location = locator.geocode(pet.adresses)
+        data = {"latitude": location.latitude,
+                "longitude": location.longitude, "pet": pet.serialize()}
+        response.append(data)
+    return jsonify(response)

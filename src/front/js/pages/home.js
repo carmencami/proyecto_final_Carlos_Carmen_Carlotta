@@ -1,38 +1,80 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Footer } from "../component/footer";
-import Fotopet from "../../img/Fotopet.png";
-import Mapa from "../component/maps";
+
+import Barnerprotectora from "../../img/Barnerprotectora.png";
+import Barneracogida from "../../img/Barneracogida.png";
+import Barnerperro from "../../img/Barnerperro.png";
+import Mapahome from "./mapahome";
 
 import "../../styles/index.css";
 
 export const Home = () => {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-6">
-            <div className="d-flex justify-content-center">
+      <div>
+        <div
+          id="carouselExampleControls"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <img
-                className="fotopett"
-                style={{ width: "500px" }}
-                src={Fotopet}
-                alt="foto"
+                src={Barneracogida}
+                className="d-block imagenportada m-auto img-fluid"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src={Barnerprotectora}
+                className="d-block imagenportada m-auto img-fluid"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src={Barnerperro}
+                className="d-block imagenportada m-auto img-fluid"
+                alt="..."
               />
             </div>
           </div>
-          <div className="col-6 align-middle">
-            <p className="textofondo">
-              “Si sabes que regresas a casa, el viaje nunca es demasiado
-              difícil.”
-            </p>
-          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div>
+          <center className="titulomapahome">
+            Ayuda a los animales que estén cerca de ti
+          </center>
+        </div>
+        <div className="mapa-home">
+          <Mapahome />
         </div>
       </div>
 
-      {/* <div>
-        <Footer />;
-      </div> */}
+      <div />
     </>
   );
 };

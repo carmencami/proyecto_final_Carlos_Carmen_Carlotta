@@ -1,9 +1,11 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import Mapahome from "../pages/mapahome";
 import { Cardperros } from "../component/card_pet";
 import { Card_protectora } from "../component/card_protectora";
 
 import "../../styles/casaacogida.css";
+import "../../styles/index.css";
 
 const CasaAcogida = () => {
   const { actions, store } = useContext(Context);
@@ -12,9 +14,19 @@ const CasaAcogida = () => {
     actions.organizacion_list();
   }, []);
   return (
-    <>
-      {/* <Navbaracogida /> */}
-      <div className="container-fluid ">
+    <div>
+      <div className="row align-items-center">
+        <div className="col-12 col-md-8">
+          <Mapahome />
+        </div>
+        <div className="col-12 col-md-4">
+          {" "}
+          <center className="titulomapa">
+            ¡Encuentra animales sin hogar cerca de ti!
+          </center>
+        </div>
+      </div>
+      <div>
         <center className="titulomascotas">
           ¿Tienes disponibilidad para ayudar a alguna de estas mascotas?
           ¡Contacta con la protectora!
@@ -39,7 +51,7 @@ const CasaAcogida = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

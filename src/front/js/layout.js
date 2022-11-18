@@ -5,7 +5,6 @@ import { Login } from "./pages/paginalogin";
 import Protectoralogin from "./pages/protectoralogin";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import { Quienessomos } from "./pages/quienessomos";
 import { Editusuario } from "./pages/editusuario";
 import Recuperacioncontrasena from "./pages/recuperacioncontrasena";
 import Casaacogida from "./pages/casaacogida";
@@ -19,6 +18,7 @@ import { Perfilprotectora } from "./pages/perfilprotectora";
 import { FormularioPets } from "./component/formulariopets";
 import { Perfilusuario } from "./pages/perfilusuario";
 import { Footer } from "./component/footer";
+import Mapahome from "./pages/mapahome";
 
 //create your first component
 const Layout = () => {
@@ -38,9 +38,9 @@ const Layout = () => {
           <Route element={<Login />} path="/login" />
           <Route element={<Registro />} path="/register" />
           <Route element={<Contacto />} path="/contacto" />
+          <Route element={<Mapahome />} path="/mapahome" />
           <Route element={<Perfilusuario />} path="/perfilusuario" />
           <Route element={<Perfilprotectora />} path="/perfilprotectora" />
-          {/* <Route element={<Quienessomos />} path="/quienessomos" /> */}
           <Route element={<Protectoralogin />} path="/protectoralogin" />
           <Route element={<Editusuario />} path="/editusuario" />
           <Route
