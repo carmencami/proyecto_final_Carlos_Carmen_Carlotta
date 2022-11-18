@@ -1,107 +1,114 @@
-
-
-.body{
-   background-color:endeded;
+.body {
+  background-color: endeded;
 }
 
-.home{
-  display:grid; 
+.card-border {
+  border-radius: 15px;
 }
 
-.responsiv{
+.home {
   display: grid;
+}
+
+.responsiv {
+  display: grid !important;
   min-height: 600px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 25px;
   margin-right: 50px;
 }
 
-.in-flex{
+.in-flex {
   flex: 1;
 }
 
-
 .protectoraocasa {
-    color: #495969;
-  }
+  color: #495969;
+}
 
-  .buttonmpas {
-    text-align: right;
-  }
+.buttonmpas {
+  text-align: right;
+}
 
-  .buttoninicio  {
-   align-items: left;
-  }
- 
-  .buttonregi {
-    text-align: center;
-  }
-  #registerbutton
-{
+.buttoninicio {
+  align-items: left;
+}
+
+.buttonregi {
+  text-align: center;
+}
+#registerbutton {
   text-align: left;
 }
 
-.ctitle{
-  background-color: rgb(187, 187, 58) !important;
-  color:rgb(48, 54, 95) !important
-  
+.butitle {
+  color: #66829d !important;
+  font: 18px fantasy !important;
+}
+
+.ctitle {
+  background-color: #dbb839 !important;
+  color: #66829d !important;
 }
 
 .botonmascota{
-  background-color: darkkhaki;
-  font:18px fantasy ;
-  font-size: 25px;
+  background-color: #dbb839 !important;
+  color:rgb(36, 78, 155);
+  font: 30px fantasy;
+  width:150px;
+  font-size: 20px;
   text-align-last:center;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  position: relative;
+  top: -230px;
+  
 }
 
-.bcontactanos{
- background-color: #dbb839 !important;
- color:rgb(36, 78, 155);
- font: 18px fantasy;
- width:205px;
- }
+.bcontactanos {
+  background-color: hsl(47, 69%, 54%) !important;
+  color: #66829d;
+  border: 6px solid rgb(249, 243, 243);
+  font: 18px fantasy;
+  width: 50%;
+}
 
- .card-border{
-  border: solid #dead31dd 10px;
-  height:250px; 
-  flex: 1;
+.titlecard {
+  font-family: "Merriweather", serif;
+  font: 25px fantasy;
+  color: #66829d;
+}
 
+.m-5 {
+  margin: 20px;
+}
 
- 
- }
-
- .titlecard{
-  font-family: 'Merriweather', serif;
-  font:18px fantasy;
-
- }
-
- .emailcard{
-  font-family: 'Merriweather', serif;
+.text-card {
+  font-family: "Merriweather", serif;
   font: 14px fantasy;
+}
 
- }
-
- .ciudadcard{
-  font-family: 'Merriweather', serif;
+.ciudadcard {
+  font-family: "Merriweather", serif;
   font: 14px fantasy;
- }
+}
 
- .dispcard{
-  font-family: 'Merriweather', serif;
+.dispcard {
+  font-family: "Merriweather", serif;
   font: 14px fantasy;
- }
+}
 
- .animalcard{
-  font-family: 'Merriweather', serif;
+.animalcard {
+  font-family: "Merriweather", serif;
   font: 14px fantasy;
- }
+}
 
- .cardrespo{
-  flex:1;
- }
-.card{
+.cardrespo {
+  display: flex;
+  height: 316px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: unset;
+}
+.card {
   background-color: transparent;
   border: 0px;
 }

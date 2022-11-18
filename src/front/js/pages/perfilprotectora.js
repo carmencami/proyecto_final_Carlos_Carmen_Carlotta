@@ -97,6 +97,7 @@ export const Perfilprotectora = () => {
           Editar
         </button>
       ) : (
+        
         <button
           onClick={() => {
             defaultState();

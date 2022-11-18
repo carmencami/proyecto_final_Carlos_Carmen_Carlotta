@@ -1,13 +1,24 @@
-.fluidbody{
-border: solid #dead31dd 10px;
-   
- 
-} 
-
+.formregister{
+box-sizing: content-box;
+width: 50%;
+max-width: 450px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  min-height: 300px;
+  background-color: #ffffff27;
+  border-top: 1px solid #ffffff6e;
+  border-left: 1px solid #ffffff6e;
+  border-radius: 15px;
+}
 
 
 
 
 .botonsubida{
     color: burlywood;
+    width:150px;
+    font-size: 20px;
+    text-align-last:center;
+    position: relative;
+    top: 40px;
 }

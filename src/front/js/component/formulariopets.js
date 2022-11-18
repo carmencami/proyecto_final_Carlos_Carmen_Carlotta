@@ -18,8 +18,14 @@ export const FormularioPets = () => {
     }
   };
 
+
+  
+
   return (
-    <div className="form-group formregister">
+    <form class="row g-3">
+    <div class="wrapper" className="form-group formregister">
+  
+     
       <div className="container-fluid bodyregistro fluidbody">
         <div className="tamañoformulario ">
           <div className="form-outline mb-4 text-center">
@@ -104,10 +110,12 @@ export const FormularioPets = () => {
 
 
             </div>
-            <Link to={"/protectoralogin"}>Inicio</Link>{" "}
+          
           </div>
         </div>
       </div>
     </div>
-  );
-};
+    </form>
+    );
+  };
+

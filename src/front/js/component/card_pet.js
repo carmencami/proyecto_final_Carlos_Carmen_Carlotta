@@ -43,9 +43,9 @@ export function Cardperros(props) {
         </ul>
         <button
           type="button"
-          className="btn btn-warning text-align:center mt-3"
+          className="btn btn-warning text-align:center mt-3 butonmas"
         >
-          <Link to={"/contacto"}>¡Contacta con la protectora!</Link>{" "}
+          <Link to={"/contacto"}>Contacta con la protectora</Link>{" "}
         </button>
       </div>
     </div>

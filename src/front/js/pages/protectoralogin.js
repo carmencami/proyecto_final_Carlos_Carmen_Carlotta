@@ -15,17 +15,20 @@ const Protectoralogin = () => {
   return (
     <>
       <div>
+        
+        <h1 className="titlecard">Te ayudamos a encontrar un hogar para tu mascota</h1>
         <Link to="/formulariopets">
           <button type="button" class="btn btn-warning" className="botonmascota">
-            Registra tu mascota{" "}
+            Registrala{" "}
           </button>
         </Link>
         <div />
-
+         <div className>
         <div className="responsiv cardrespo">
           {store.casaacogida_list.map((organizacion) => {
             return <CasaAcogidaCard key={organizacion.id} pet={organizacion} />;
           })}
+        </div>
         </div>
       </div>
     </>

@@ -14,3 +14,14 @@
   border: 20;
   overflow-x: auto;
 }
+
+
+.butonmas{
+  
+    background-color: #dbb839 !important;
+    color:rgb(208, 212, 220);
+    font-family: 'Merriweather', serif;
+  
+    width:205px;
+    
+}

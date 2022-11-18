@@ -8,11 +8,12 @@
   white-space: nowrap;
 }
 .organizacioncard {
-  display: flex;
-  border: 20;
-  overflow-x: auto;
-  margin-top: 100px;
-  margin-bottom: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+
+	min-height: 100vh;
 }
 .botoncontacto {
   background-color: rgba(221, 175, 36, 0.989);
@@ -38,7 +39,8 @@
 }
 
 .botonmascota{
-  margin-top: 200px;
+  margin-top: 250px;
   color:beige
+
 
 }

@@ -11,34 +11,40 @@ export function CasaAcogidaCard(props) {
   }, []);
 
   return (
-    <div className="">
-      <div className="card" style={{ width: "18rem"  }} />
-      <div className="card-body card-border">
-        {/* <div>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setPhot(e.target.photo)}
-          />
-        </div> */}
-        <ul className="list-group list-group-flush ">
-          <li
-            className="ctitle list-group-item active text-break titlecard "
-            aria-current="true">  {props.pet.name}
-          </li>
-          <li className="list-group-item text-break emailcard ">Email:{props.pet.email}</li>
-          <li className="list-group-item text-break ciudadcard ">Ciudad:{props.pet.city}</li>
-          <li className="list-group-item text-break dispcard">Disponibilidad:{props.pet.avaiability}
-          </li>
-          <li className="list-group-item text-break animalcard ">Animales:{props.pet.animals}
-          </li>
-        </ul>
-        <Link to={"/contacto"}> 
-          <button type="button" className="bcontactanos">
-           Contacta con nosotros {" "}
-           </button>
-        </Link>
-      </div>
+    <div className="card" style={{ width: "18rem" }}>
+      {/* <div>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setPhot(e.target.photo)}
+              />
+            </div> */}
+      <ul className="list-group list-group-flush strut">
+        <li
+          className="ctitle list-group-item active text-break titlecard "
+          aria-current="true"
+        >
+          {" "}
+          {props.pet.name}
+        </li>
+        <li className="list-group-item text-break text-card ">
+          Email:{props.pet.email}
+        </li>
+        <li className="list-group-item text-break text-card ">
+          Ciudad:{props.pet.city}
+        </li>
+        <li className="list-group-item text-break text-card">
+          Disponibilidad:{props.pet.avaiability}
+        </li>
+        <li className="list-group-item text-break text-card ">
+          Animales:{props.pet.animals}
+        </li>
+      </ul>
+      <Link to={"/contacto"}>
+        <button type="button" className="bcontactanos">
+          Contacta con nosotros{" "}
+        </button>
+      </Link>
     </div>
   );
 }
